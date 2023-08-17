@@ -1,0 +1,26 @@
+# -*- coding: utf-8 -*-
+"""
+Created on Thu Aug 17 17:06:24 2023
+
+@author: erenz
+"""
+
+def isPrime(x):
+    if x < 2:
+        return False
+    elif x == 2:
+        return True  
+    for n in range(2, x):
+        if x % n ==0:
+            return False
+    return True
+
+def primeGenerator(a, b):
+    for number in range(a,b):
+        if isPrime(number):
+            yield number
+    
+f = int(input())
+t = int(input())
+
+print(list(primeGenerator(f, t)))
